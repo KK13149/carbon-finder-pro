@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1440" />
+    <title>Carbon Finder Pro | 二电子 ORR 碳材料研究台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <strong>Carbon Finder Pro</strong>
+            <span>桌面级二电子 ORR 碳材料研究台</span>
+          </div>
+        </div>
+        <nav class="top-actions" aria-label="页面区域">
+          <a href="#finder">材料筛选</a>
+          <a href="#map">属性地图</a>
+          <a href="#protocol">实验入口</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="finder">
+          <div class="hero-copy">
+            <p class="eyebrow">Advanced carbon material intelligence</p>
+            <h1>把候选碳材料变成可以直接判断的研究面板。</h1>
+            <p class="subhead">
+              面向二电子氧还原反应，按前沿性、文献权重、2e ORR 迁移潜力、可获得性和方向空白度实时重排。
+            </p>
+            <div class="search-row">
+              <label class="search-box" for="searchInput">
+                <span aria-hidden="true">⌕</span>
+                <input id="searchInput" type="search" placeholder="搜索材料、结构或机理：graphyne、C60、孔、sp2/sp3、边缘..." autocomplete="off" />
+              </label>
+              <button class="primary-button" id="resetButton" type="button">重置视图</button>
+            </div>
+          </div>
+
+          <aside class="hero-dashboard">
+            <div class="hero-dashboard-head">
+              <div>
+                <p>Live recommendation</p>
+                <strong id="heroName">单层非晶碳 MAC</strong>
+              </div>
+              <span id="heroScore">96</span>
+            </div>
+            <canvas id="mapCanvas" width="760" height="390"></canvas>
+            <div class="axis-caption">
+              <span>低可获得性 / 高空白探索</span>
+              <span>高可获得性 / 高迁移潜力</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="control-deck" aria-label="筛选与排序">
+          <div class="control-block">
+            <span class="control-label">优先级</span>
+            <div class="segmented" id="priorityFilters"></div>
+          </div>
+          <div class="control-block">
+            <label class="control-label" for="categoryFilter">类别</label>
+            <select id="categoryFilter">
+              <option value="all">全部类别</option>
+            </select>
+          </div>
+          <div class="control-block wide">
+            <label class="control-label" for="routeFilter">创新路线</label>
+            <select id="routeFilter">
+              <option value="all">全部路线</option>
+            </select>
+          </div>
+          <div class="control-block">
+            <label class="control-label" for="sortSelect">排序</label>
+            <select id="sortSelect">
+              <option value="score">综合推荐分</option>
+              <option value="transfer">2e ORR 迁移潜力</option>
+              <option value="access">可获得性</option>
+              <option value="blank">空白度</option>
+              <option value="rank">原始优先级</option>
+            </select>
+          </div>
+          <div class="control-block presets">
+            <span class="control-label">分析模式</span>
+            <div class="segmented" id="presetButtons"></div>
+          </div>
+        </section>
+
+        <section class="stat-strip" aria-label="总体统计">
+          <article>
+            <span>当前候选</span>
+            <strong id="statCount">29</strong>
+          </article>
+          <article>
+            <span>最高推荐分</span>
+            <strong id="statTopScore">96</strong>
+          </article>
+          <article>
+            <span>纯碳/表面终止路线</span>
+            <strong id="statPure">15</strong>
+          </article>
+          <article>
+            <span>可近期启动</span>
+            <strong id="statAccessible">13</strong>
+          </article>
+          <article>
+            <span>更新节奏</span>
+            <strong id="statCadence">3h</strong>
+          </article>
+        </section>
+
+        <section class="workspace">
+          <aside class="scoring-panel">
+            <div class="section-title">
+              <p>Scoring model</p>
+              <h2>权重调节</h2>
+            </div>
+            <div id="weightControls" class="weight-controls"></div>
+            <div class="update-card">
+              <span>自动扩充</span>
+              <strong id="updateCadence">每 3 小时</strong>
+              <p id="updateMeta">优先检索顶刊、子刊、Nature Index 来源、高评价期刊、实验室新闻和前沿公司产品。</p>
+            </div>
+          </aside>
+
+          <section class="analysis-panel">
+            <div class="top-picks" id="topPicks"></div>
+
+            <div class="detail-card" id="detailPanel" aria-live="polite"></div>
+
+            <div class="table-head" id="map">
+              <div>
+                <p>Decision matrix</p>
+                <h2>候选材料评分表</h2>
+              </div>
+              <span id="tableSummary">按综合推荐分排序</span>
+            </div>
+            <div class="material-table" id="materialTable"></div>
+          </section>
+        </section>
+
+        <section class="protocol" id="protocol">
+          <div class="section-title">
+            <p>First-pass protocol</p>
+            <h2>建议的首轮实验判断</h2>
+          </div>
+          <div class="protocol-grid">
+            <article>
+              <span>01</span>
+              <h3>先锁定对照</h3>
+              <p>Ketjenblack/玻碳、CNT/graphene、氧化/还原后的同骨架材料，用来分离结构效应和官能团效应。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>RRDE 做快速筛选</h3>
+              <p>先看 H2O2 选择性、电流和稳定性，再用化学滴定或在线定量交叉验证。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>补测 H2O2 分解</h3>
+              <p>金属残留、强吸附位点和部分异质结会消耗 H2O2，不测分解容易误判。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>难样品找替代模型</h3>
+              <p>CNO 替代 2D C60 做曲率验证，孔石墨烯替代原子级 NPG 做孔/边缘验证。</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./materials-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
