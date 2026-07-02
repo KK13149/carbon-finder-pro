@@ -5,19 +5,24 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: carbon-finder-deploy
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  update-and-publish:
+  update-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -47,17 +52,14 @@ jobs:
           git diff --cached --quiet || git commit -m "Update carbon materials database"
           git push
 
-      - name: Publish static site to gh-pages branch
-        shell: bash
-        run: |
-          mkdir -p _site
-          cp index.html styles.css app.js materials-data.js _site/
-          touch _site/.nojekyll
-          git config user.name "carbon-finder-bot"
-          git config user.email "carbon-finder-bot@users.noreply.github.com"
-          git switch --orphan gh-pages-deploy
-          git rm -rf . >/dev/null 2>&1 || true
-          cp -r _site/. .
-          git add index.html styles.css app.js materials-data.js .nojekyll
-          git commit -m "Deploy Carbon Finder Pro"
-          git push -f origin HEAD:gh-pages
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
