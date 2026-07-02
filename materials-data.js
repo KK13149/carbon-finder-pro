@@ -663,9 +663,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每 30 分钟",
-  "updatedAt": "2026-07-02 21:48 Asia/Shanghai",
+  "updatedAt": "2026-07-03 02:22 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "自动新增 2 个候选：Biofilm-disrupting and redox-active carbon dots modulate Wnt/β-catenin signaling to resolve a...；Dual role of carbon nonstoichiometry in tuning dislocation behavior in high-entropy transitio..."
+  "lastRunSummary": "本轮已检索，未发现足够可信且不重复的新候选。"
 };
 
 window.CARBON_SOURCE_DETAILS = {
