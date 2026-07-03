@@ -19,6 +19,7 @@
         <nav class="top-actions" aria-label="页面区域">
           <a href="#finder">材料筛选</a>
           <a href="#map">属性地图</a>
+          <a href="#published">已发表文献</a>
           <a href="#protocol">实验入口</a>
         </nav>
       </header>
@@ -108,7 +109,11 @@
           </article>
           <article>
             <span>更新节奏</span>
-            <strong id="statCadence">3h</strong>
+            <strong id="statCadence">1d</strong>
+          </article>
+          <article>
+            <span>已发表文献</span>
+            <strong id="statLiterature">0</strong>
           </article>
         </section>
 
@@ -134,12 +139,26 @@
             <div class="table-head" id="map">
               <div>
                 <p>Decision matrix</p>
-                <h2>候选材料评分表</h2>
+                <h2>候选材料库评分表</h2>
               </div>
               <span id="tableSummary">按综合推荐分排序</span>
             </div>
             <div class="material-table" id="materialTable"></div>
           </section>
+        </section>
+
+        <section class="published-literature" id="published">
+          <div class="table-head">
+            <div>
+              <p>Published 2e ORR carbon catalysts</p>
+              <h2>已发表碳材料二电子 ORR 文献库</h2>
+            </div>
+            <span id="literatureSummary">与候选材料库分开展示</span>
+          </div>
+          <div class="literature-note">
+            这里收录的是已经有人发表并用于二电子氧还原 / H2O2 电合成的碳基催化剂材料，用来判断某条路线是否已经被充分探索。它们不参与 P0/P1/P2/P3 候选材料排序。
+          </div>
+          <div class="literature-table" id="literatureTable"></div>
         </section>
 
         <section class="protocol" id="protocol">

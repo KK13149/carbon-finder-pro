@@ -1,7 +1,8 @@
 (function () {
   const materials = window.CARBON_MATERIALS || [];
+  const literature = window.CARBON_2E_ORR_LITERATURE || [];
   const feedMeta = window.CARBON_FEED_META || {
-    cadence: "每 3 小时",
+    cadence: "每天一次",
     updatedAt: "待自动任务更新",
     sourcePolicy: "顶刊、子刊、Nature Index、高评价期刊、实验室新闻和前沿公司产品"
   };
@@ -59,11 +60,14 @@
     statPure: document.getElementById("statPure"),
     statAccessible: document.getElementById("statAccessible"),
     statCadence: document.getElementById("statCadence"),
+    statLiterature: document.getElementById("statLiterature"),
     updateCadence: document.getElementById("updateCadence"),
     updateMeta: document.getElementById("updateMeta"),
     heroName: document.getElementById("heroName"),
     heroScore: document.getElementById("heroScore"),
-    mapCanvas: document.getElementById("mapCanvas")
+    mapCanvas: document.getElementById("mapCanvas"),
+    literatureTable: document.getElementById("literatureTable"),
+    literatureSummary: document.getElementById("literatureSummary")
   };
 
   const unique = (items) => Array.from(new Set(items)).sort((a, b) => a.localeCompare(b, "zh-CN"));
@@ -114,10 +118,17 @@
 
   function init() {
     initControls();
-    els.statCadence.textContent = feedMeta.cadence.replace("每 ", "").replace(" 小时", "h");
+    els.statCadence.textContent = formatCadence(feedMeta.cadence);
     els.updateCadence.textContent = feedMeta.cadence;
     els.updateMeta.textContent = `${feedMeta.sourcePolicy}；最近更新：${feedMeta.updatedAt}`;
+    els.statLiterature.textContent = literature.length;
     render();
+  }
+
+  function formatCadence(cadence) {
+    if (/每天|每日/.test(cadence)) return "1d";
+    if (/30 分钟/.test(cadence)) return "30m";
+    return cadence.replace("每 ", "").replace(" 小时", "h");
   }
 
   function initControls() {
@@ -234,6 +245,7 @@
     renderTopPicks(results, selected);
     renderDetail(selected);
     renderTable(results, selected);
+    renderLiterature(filteredLiterature());
     drawMap(results, selected);
     if (selected) {
       els.heroName.textContent = selected.name;
@@ -400,6 +412,54 @@
         render();
       });
     });
+  }
+
+  function filteredLiterature() {
+    const query = state.query;
+    return literature
+      .filter((item) => {
+        if (!query) return true;
+        const haystack = [
+          item.status,
+          item.year,
+          item.venue,
+          item.title,
+          item.material,
+          item.materialType,
+          item.catalystClass,
+          item.reaction,
+          item.relevance
+        ].join(" ").toLowerCase();
+        return haystack.includes(query);
+      })
+      .sort((a, b) => Number(b.year) - Number(a.year) || a.venue.localeCompare(b.venue));
+  }
+
+  function renderLiterature(items) {
+    els.statLiterature.textContent = literature.length;
+    els.literatureSummary.textContent = `显示 ${items.length} / ${literature.length} 条已发表碳基 2e ORR 文献`;
+    if (!items.length) {
+      els.literatureTable.innerHTML = `<div class="empty-state">当前关键词下没有匹配的已发表文献。</div>`;
+      return;
+    }
+
+    const header = `
+      <div class="literature-row header">
+        <span>状态</span><span>年份</span><span>催化剂材料</span><span>文献出处</span><span>为什么重要</span><span>链接</span>
+      </div>
+    `;
+    const body = items.map((item) => `
+      <div class="literature-row">
+        <span class="published-badge">${item.status || "已发表催化剂"}</span>
+        <span class="literature-year">${item.year}</span>
+        <span class="literature-material"><strong>${item.material}</strong><em>${item.materialType} · ${item.catalystClass}</em></span>
+        <span class="literature-source"><strong>${item.venue}</strong><em>${item.title}</em></span>
+        <span class="literature-relevance">${item.relevance}</span>
+        <span>${item.link ? `<a class="paper-link" href="${item.link}" target="_blank" rel="noreferrer">原文</a>` : "检索"}</span>
+      </div>
+    `).join("");
+
+    els.literatureTable.innerHTML = header + body;
   }
 
   function dotMeter(value) {
