@@ -663,7 +663,7 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每 30 分钟",
-  "updatedAt": "2026-07-03 10:35 Asia/Shanghai",
+  "updatedAt": "2026-07-03 10:48 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
   "lastRunSummary": "本轮已检索，未发现足够可信且不重复的新候选。"
 };
