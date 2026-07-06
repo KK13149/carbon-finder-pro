@@ -2218,14 +2218,34 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 112,
+    "name": "Synergetic design of dopant-free defect-enriched 3D interconnected hierarchical porous graphe...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Carbon / 文献来源",
+    "source": "https://doi.org/10.1016/j.carbon.2021.08.066",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 5,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-07-06 04:33 Asia/Shanghai",
+  "updatedAt": "2026-07-07 05:51 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料新增 11 条，目标大于 10 条/日；已发表 2e ORR 碳文献新增 3 条，目标大于 30 条/日"
+  "lastRunSummary": "候选材料新增 1 条，目标大于 10 条/日；已发表 2e ORR 碳文献新增 2 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -3005,6 +3025,13 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2024",
     "title": "Preparation of nitrogen-doped carbon pyrolyzed from ZIF-8 and its performance in electrocatalytic oxygen reduction to hydrogen peroxide",
     "link": "https://doi.org/10.1016/j.jelechem.2024.118202"
+  },
+  "Synergetic design of dopant-free defect-enriched 3D interconnected hierarchical porous graphe...": {
+    "kind": "文献",
+    "venue": "Carbon",
+    "year": "2021",
+    "title": "Synergetic design of dopant-free defect-enriched 3D interconnected hierarchical porous graphene mesh for boosting oxygen reduction reaction",
+    "link": "https://doi.org/10.1016/j.carbon.2021.08.066"
   }
 };
 
@@ -4407,6 +4434,34 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
     "doi": "10.1038/s41929-018-0044-2",
     "link": "https://doi.org/10.1038/s41929-018-0044-2",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表催化剂",
+    "year": 2026,
+    "venue": "Diamond and Related Materials",
+    "title": "Engineering PTI-PHI carbon nitride composite promotes photocatalytic hydrogen peroxide synthesis through oxygen reduction reaction",
+    "material": "Engineering PTI-PHI carbon nitride composite promotes photocatalytic hydrogen peroxide ...",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1016/j.diamond.2025.113210",
+    "link": "https://doi.org/10.1016/j.diamond.2025.113210",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表催化剂",
+    "year": 2024,
+    "venue": "Chemical Engineering Science",
+    "title": "Improving dispersion of indium polyphthalocyanine on carbon nanotube via molecular modification for efficient oxygen reduction to hydrogen peroxide",
+    "material": "Improving dispersion of indium polyphthalocyanine on carbon nanotube",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1016/j.ces.2024.119749",
+    "link": "https://doi.org/10.1016/j.ces.2024.119749",
     "sourceKind": "文献"
   }
 ];
