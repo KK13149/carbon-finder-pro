@@ -66,6 +66,7 @@
     updateMeta: document.getElementById("updateMeta"),
     heroName: document.getElementById("heroName"),
     heroScore: document.getElementById("heroScore"),
+    predictionPanels: document.getElementById("predictionPanels"),
     mapCanvas: document.getElementById("mapCanvas"),
     globalSearchPanel: document.getElementById("globalSearchPanel"),
     globalSearchScope: document.getElementById("globalSearchScope"),
@@ -276,6 +277,7 @@
     const results = filteredMaterials();
     const selected = selectMaterial(results);
     renderStats(results);
+    renderPredictionPanels(selected);
     renderTopPicks(results, selected);
     renderDetail(selected);
     renderTable(results, selected);
@@ -304,6 +306,134 @@
     els.statTopScore.textContent = results.length ? Math.max(...results.map((item) => item.score)) : 0;
     els.statPure.textContent = results.filter((item) => item.category.includes("纯碳") || item.category.includes("表面终止")).length;
     els.statAccessible.textContent = results.filter((item) => item.access >= 4).length;
+  }
+
+  function renderPredictionPanels(item) {
+    if (!els.predictionPanels) return;
+    if (!item) {
+      els.predictionPanels.innerHTML = `<div class="prediction-empty">等待选择候选材料</div>`;
+      return;
+    }
+    els.predictionPanels.innerHTML = decisionPanelGrid(item, "hero");
+  }
+
+  function decisionPanelGrid(item, variant = "detail") {
+    const metrics = researchMetrics(item);
+    const panels = [
+      {
+        label: "材料导电性",
+        value: metrics.conductivity,
+        note: metrics.conductivityNote,
+        tone: "teal"
+      },
+      {
+        label: "2e 迁移能力",
+        value: metrics.twoElectron,
+        note: "由 2e ORR 迁移潜力、空白度与结构风险综合估算",
+        tone: "blue"
+      },
+      {
+        label: "材料可获得性",
+        value: metrics.availability,
+        note: `${item.access}/5，可直接反映采购、复现或合作难度`,
+        tone: "green"
+      },
+      {
+        label: "制备难度",
+        value: metrics.difficulty,
+        note: metrics.difficultyNote,
+        tone: "amber",
+        inverted: true
+      },
+      {
+        label: "文献可信度",
+        value: metrics.evidence,
+        note: `${item.evidence}/5，按期刊权重和结构证据估算`,
+        tone: "slate"
+      },
+      {
+        label: "方向空白度",
+        value: metrics.blank,
+        note: `${item.blank}/5，越高代表越可能有新空间`,
+        tone: "rose"
+      }
+    ];
+
+    return `<div class="decision-panels ${variant === "hero" ? "hero-decision-panels" : "detail-decision-panels"}">
+      ${panels.map((panel) => predictionCard(panel)).join("")}
+    </div>`;
+  }
+
+  function predictionCard(panel) {
+    const status = panel.inverted ? inverseLevel(panel.value) : levelLabel(panel.value);
+    return `
+      <article class="prediction-card tone-${panel.tone}" style="--value:${panel.value}%">
+        <header>
+          <span>${panel.label}</span>
+          <strong>${panel.value}</strong>
+        </header>
+        <div class="prediction-meter"><span></span></div>
+        <footer>${status} · ${panel.note}</footer>
+      </article>
+    `;
+  }
+
+  function researchMetrics(item) {
+    const text = [
+      item.name,
+      item.route,
+      item.category,
+      item.sourceWeight,
+      item.innovation,
+      item.hypothesis,
+      item.experiment
+    ].join(" ").toLowerCase();
+
+    let conductivity = 50 + item.evidence * 4 + item.access * 2;
+    if (/graphene|graphdiyne|graphyne|nanotube|cnt|carbon nanotube|3d|foam|aerogel|sp2|biphenylene|schwarzite|nanohorn/.test(text)) conductivity += 18;
+    if (/metallic|conductive|graphitized|single atom|doped|n-doped|fe-|co-|ni-/.test(text)) conductivity += 8;
+    if (/amorphous|fullerene|c60|carbon dot|quantum dot|cof|mof|hof|organic framework|polymer|paf|pop|xof/.test(text)) conductivity -= 10;
+    if (/monolayer|film|thin/.test(text)) conductivity -= 4;
+    conductivity = clamp(Math.round(conductivity), 8, 98);
+
+    const metalRisk = /fe|co|ni|pt|pd|ru|single atom|metal/.test(text) && !/metal-free|free/.test(text) ? 7 : 0;
+    const twoElectron = clamp(Math.round(item.transfer * 17 + item.blank * 5 + item.novelty * 2 - metalRisk), 8, 98);
+    const availability = clamp(item.access * 20, 5, 100);
+
+    let difficulty = 100 - item.access * 17 + item.novelty * 4;
+    if (/on-surface|uhv|single atom|endohedral|metallofullerene|monolayer|cof|mof|hof|xof|paf|c60|graphyne|graphdiyne/.test(text)) difficulty += 13;
+    if (/commercial|purchased|carbon black|cnt|graphene oxide|biomass|zif|mof-derived|template/.test(text)) difficulty -= 7;
+    if (item.priority === "P0") difficulty += 6;
+    difficulty = clamp(Math.round(difficulty), 8, 98);
+
+    return {
+      conductivity,
+      twoElectron,
+      availability,
+      difficulty,
+      evidence: clamp(item.evidence * 20, 5, 100),
+      blank: clamp(item.blank * 20, 5, 100),
+      conductivityNote: conductivity >= 76 ? "预计导电网络较好，可优先做电极验证" : conductivity >= 52 ? "预计需要导电载体或退火优化" : "预计导电性是主要短板，需复合导电碳",
+      difficultyNote: difficulty >= 76 ? "合成或获得门槛高，适合合作/小样验证" : difficulty >= 48 ? "可做，但需要控制结构和杂质变量" : "制备路径相对友好，适合快速启动"
+    };
+  }
+
+  function levelLabel(value) {
+    if (value >= 80) return "强";
+    if (value >= 62) return "较强";
+    if (value >= 42) return "中等";
+    return "偏弱";
+  }
+
+  function inverseLevel(value) {
+    if (value >= 80) return "高难";
+    if (value >= 62) return "偏难";
+    if (value >= 42) return "中等";
+    return "易启动";
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
   }
 
   function renderTopPicks(results, selected) {
@@ -351,6 +481,7 @@
           <h2>${item.name}</h2>
         </div>
         <p class="detail-text">${item.innovation}</p>
+        ${decisionPanelGrid(item)}
         <div class="source-card">
           <span>${sourceInfo.kind}</span>
           <strong>${sourceInfo.venue}${sourceInfo.year ? ` · ${sourceInfo.year}` : ""}</strong>

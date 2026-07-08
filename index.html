@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1440" />
-    <title>Carbon Finder Pro | 二电子 ORR 碳材料研究台</title>
+    <title>Carbon Finder Pro | 电催化二电子氧还原研究预测性能面板</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -13,7 +13,7 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <div>
             <strong>Carbon Finder Pro</strong>
-            <span>桌面级二电子 ORR 碳材料研究台</span>
+            <span>电催化二电子氧还原研究预测面板</span>
           </div>
         </div>
         <nav class="top-actions" aria-label="页面区域">
@@ -28,7 +28,7 @@
         <section class="hero" id="finder">
           <div class="hero-copy">
             <p class="eyebrow">Advanced carbon material intelligence</p>
-            <h1>把候选碳材料变成可以直接判断的研究面板。</h1>
+            <h1 class="hero-title">电催化二电子氧还原研究预测性能面板</h1>
             <p class="subhead">
               面向二电子氧还原反应，按前沿性、文献权重、2e ORR 迁移潜力、可获得性和方向空白度实时重排。
             </p>
@@ -49,11 +49,12 @@
           <aside class="hero-dashboard">
             <div class="hero-dashboard-head">
               <div>
-                <p>Live recommendation</p>
+                <p>Live prediction</p>
                 <strong id="heroName">单层非晶碳 MAC</strong>
               </div>
               <span id="heroScore">96</span>
             </div>
+            <div class="prediction-panels" id="predictionPanels"></div>
             <canvas id="mapCanvas" width="760" height="390"></canvas>
             <div class="axis-caption">
               <span>低可获得性 / 高空白探索</span>

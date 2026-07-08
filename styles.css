@@ -201,6 +201,26 @@ h1 {
   line-height: 1.04;
 }
 
+.hero-title {
+  max-width: 720px;
+  margin-bottom: 20px;
+  color: #111113;
+  font-size: 64px;
+  font-weight: 950;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.hero-title::after {
+  content: "";
+  display: block;
+  width: 188px;
+  height: 5px;
+  margin-top: 22px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #111113, #2f7d68 42%, #2f5fbd);
+}
+
 .subhead {
   max-width: 650px;
   margin-bottom: 30px;
@@ -299,10 +319,116 @@ h1 {
 #mapCanvas {
   display: block;
   width: 100%;
-  height: 390px;
+  height: 300px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
   background: #101013;
+}
+
+.decision-panels {
+  display: grid;
+  gap: 10px;
+}
+
+.hero-decision-panels {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 12px 0 14px;
+}
+
+.detail-decision-panels {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 0 16px;
+}
+
+.prediction-empty {
+  grid-column: 1 / -1;
+  min-height: 88px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.prediction-card {
+  min-height: 106px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
+    #141417;
+}
+
+.prediction-card header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.prediction-card header span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.prediction-card header strong {
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.prediction-meter {
+  height: 7px;
+  margin: 12px 0 9px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.prediction-meter span {
+  display: block;
+  width: var(--value);
+  height: 100%;
+  border-radius: inherit;
+  background: #fff;
+}
+
+.prediction-card footer {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+.tone-teal .prediction-meter span { background: #5eead4; }
+.tone-blue .prediction-meter span { background: #93c5fd; }
+.tone-green .prediction-meter span { background: #bef264; }
+.tone-amber .prediction-meter span { background: #fcd34d; }
+.tone-slate .prediction-meter span { background: #cbd5e1; }
+.tone-rose .prediction-meter span { background: #fda4af; }
+
+.detail-decision-panels .prediction-card {
+  min-height: 118px;
+  border-color: rgba(21, 21, 24, 0.1);
+  background: linear-gradient(180deg, #ffffff, #f7f8fb);
+}
+
+.detail-decision-panels .prediction-card header span {
+  color: #626772;
+}
+
+.detail-decision-panels .prediction-card header strong {
+  color: #111113;
+}
+
+.detail-decision-panels .prediction-meter {
+  background: #e8ebf0;
+}
+
+.detail-decision-panels .prediction-card footer {
+  color: #555b66;
 }
 
 .axis-caption {
