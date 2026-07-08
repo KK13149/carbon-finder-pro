@@ -31,6 +31,9 @@ const highValueVenues = [
   "Angewandte Chemie",
   "ACS Nano",
   "ACS Catalysis",
+  "ACS Materials Letters",
+  "ACS Applied Energy Materials",
+  "Chemistry of Materials",
   "Nano Letters",
   "Journal of Materials Chemistry A",
   "Chemical Communications",
@@ -63,7 +66,20 @@ const candidateQueries = [
   "pure carbon defect topology amorphous carbon nonbenzenoid carbon allotrope",
   "carbon nanomaterial synthesis graphyne graphene nanoribbon",
   "porous carbon graphene edge sites oxygen reduction hydrogen peroxide",
-  "heteroatom doped carbon two electron oxygen reduction hydrogen peroxide"
+  "heteroatom doped carbon two electron oxygen reduction hydrogen peroxide",
+  "single walled carbon nanohorns carbon nanohorn ACS Nano Advanced Materials",
+  "fullerene derived porous carbon C60 fullerene carbon Advanced Materials Nature",
+  "endohedral metallofullerene carbon cage JACS Angewandte Nature Communications",
+  "metallofullerene molecular carbon nanomaterials JACS Angewandte Advanced Materials",
+  "two dimensional carbon allotrope graphdiyne graphyne biphenylene JACS Science Advanced Materials",
+  "three dimensional graphene porous carbon network Nature Materials Advanced Materials",
+  "3D continuously porous graphene carbon foam Advanced Materials Nature Communications",
+  "covalent organic framework derived carbon COF electrocatalysis JACS Advanced Materials Chemistry of Materials",
+  "metal organic framework derived carbon MOF porous carbon Advanced Materials Advanced Functional Materials",
+  "hydrogen bonded organic framework HOF derived carbon porous carbon Angewandte Chemical Society Reviews",
+  "conductive hydrogen bonded organic framework carbon precursor ACS Materials Letters",
+  "porous aromatic framework derived carbon all carbon linked JACS",
+  "hyper crosslinked polymer derived porous carbon XOF POP carbon Energy Fuels Advanced Functional Materials"
 ];
 
 const curatedCandidateMaterials = [
@@ -888,7 +904,7 @@ const currentYear = new Date().getFullYear();
 const todayISO = new Date().toISOString().slice(0, 10);
 const blockedTitleWords = /\b(review|reviews|progress|perspective|minireview|editorial|correction|corrigendum|retraction|erratum|comment|recent advances|advances and challenges|design strategies|guidelines|xgboost|machine learning|data-driven|database|first-principles|dft|theoretical|ssrn|meeting abstract|from mechanism|from microenvironment|from active site|device design|understandings of active sites|surface\/interface engineering|catalysts for electrosynthesis|role of lightweight doping|utilizing carbonaceous catalysts)\b/i;
 const carbonWords = /\b(carbon|graphene|graphyne|graphdiyne|fullerene|nanoribbon|nanothread|nanoporous|diamond|diamane|nanotube|c2n|carbonaceous|carbon dot|coal)\b/i;
-const candidateIntentWords = /\b(allotrope|graphyne|graphdiyne|fullerene|nonbenzenoid|nanoporous|porous carbon|carbon dot|graphene|nanoribbon|nanothread|defect|edge|doped carbon|carbon aerogel|electrocatalyst|oxygen reduction|peroxide|h2o2)\b/i;
+const candidateIntentWords = /\b(allotrope|graphyne|graphdiyne|fullerene|metallofullerene|endofullerene|endohedral|nanohorn|nano-horn|nonbenzenoid|nanoporous|porous carbon|carbon dot|graphene|nanoribbon|nanothread|defect|edge|doped carbon|carbon aerogel|carbon foam|3d graphene|organic framework|covalent organic framework|metal organic framework|hydrogen bonded organic framework|porous aromatic framework|hypercrosslinked|hyper-crosslinked|cof|mof|hof|xof|paf|pop|framework-derived|derived carbon|electrocatalyst|oxygen reduction|peroxide|h2o2)\b/i;
 const candidateNoiseWords = /\b(biofilm|bacterial|inflammation|thermal insulation|dimensional stability|dislocation|embrittlement|superalloy|corrosion|ceramic|ceramics|lithium storage|lithium-ion|battery anode|withdrawn|meeting abstract|electric permittivity|mechanical properties|fracture patterns|thermal transport|hydrogen and nitrogen selectivity)\b/i;
 const peroxideWords = /\b(hydrogen peroxide|h2o2|peroxide)\b/i;
 const orrWords = /\b(two-electron|2e|oxygen reduction|orr|electrosynthesis)\b/i;
@@ -1117,6 +1133,97 @@ function workMeta(work) {
 
 function classifyCandidate(title) {
   const lower = title.toLowerCase();
+  if (/nanohorn|nano-horn/.test(lower)) {
+    return {
+      priority: "P0",
+      route: "纯碳曲率/碳纳米角",
+      category: "纯碳/碳纳米角",
+      novelty: 5,
+      evidence: 4,
+      transfer: /oxygen reduction|peroxide|h2o2/.test(lower) ? 5 : 4,
+      access: 3,
+      blank: 5,
+      hypothesis: "碳纳米角的锥角曲率、开口边缘和团簇孔道可用于分离曲率、孔限域和含氧边缘对 2e ORR/H2O2 的贡献。"
+    };
+  }
+  if (/metallofullerene|endofullerene|endohedral/.test(lower)) {
+    return {
+      priority: "P0",
+      route: "金属内嵌富勒烯/碳笼电荷调控",
+      category: "金属富勒烯",
+      novelty: 5,
+      evidence: 4,
+      transfer: 3,
+      access: 2,
+      blank: 5,
+      hypothesis: "内嵌金属或客体可在不外露金属位点的情况下调节碳笼电子结构，适合小样验证 *OOH 弱吸附和 H2O2 稳定性。"
+    };
+  }
+  if (/covalent organic framework|cof|graphdiyne.*framework|ethynyl-linked/.test(lower)) {
+    return {
+      priority: "P1",
+      route: "COF 衍生碳/晶态有机框架碳化",
+      category: "COF 衍生碳",
+      novelty: 4,
+      evidence: 4,
+      transfer: /oxygen reduction|peroxide|h2o2/.test(lower) ? 5 : 4,
+      access: 3,
+      blank: 4,
+      hypothesis: "COF 可把孔道、元素分布和 sp/sp2 共轭预先设计好，碳化后适合筛选弱 *OOH 结合的框架衍生碳。"
+    };
+  }
+  if (/metal[ -]?organic framework|mof/.test(lower)) {
+    return {
+      priority: "P1",
+      route: "MOF 衍生碳/孔结构与金属残留调控",
+      category: "MOF 衍生碳",
+      novelty: 4,
+      evidence: 5,
+      transfer: /oxygen reduction|peroxide|h2o2/.test(lower) ? 4 : 3,
+      access: 4,
+      blank: 3,
+      hypothesis: "MOF 衍生碳可快速建立孔结构、N 位点和金属残留矩阵，但用于 2e ORR 时必须重点排查 4e ORR 与 H2O2 分解。"
+    };
+  }
+  if (/hydrogen[ -]?bonded organic framework|hof/.test(lower)) {
+    return {
+      priority: "P1",
+      route: "HOF 衍生碳/氢键有机框架前驱体",
+      category: "HOF 衍生碳",
+      novelty: 5,
+      evidence: 3,
+      transfer: 3,
+      access: 2,
+      blank: 5,
+      hypothesis: "HOF 的可逆氢键和晶态孔道可能提供低金属、轻元素分布可调的碳前驱体，是 COF/MOF 之外的前沿空白方向。"
+    };
+  }
+  if (/porous aromatic framework|hyper[ -]?crosslinked|xof|paf|pop/.test(lower)) {
+    return {
+      priority: "P1",
+      route: "XOF/PAF/POP 衍生碳",
+      category: "XOF/PAF 衍生碳",
+      novelty: 4,
+      evidence: 4,
+      transfer: 4,
+      access: 3,
+      blank: 4,
+      hypothesis: "全碳连接或超交联框架可提供微孔、共轭骨架和低金属背景，适合补充 COF/MOF 之外的框架衍生碳候选。"
+    };
+  }
+  if (/3d graphene|three-dimensional graphene|carbon foam|graphene foam|continuously porous graphene/.test(lower)) {
+    return {
+      priority: "P1",
+      route: "三维纯碳网络/连续孔传质",
+      category: "纯碳/三维碳",
+      novelty: 4,
+      evidence: 5,
+      transfer: 5,
+      access: 3,
+      blank: 4,
+      hypothesis: "三维 graphene/foam 网络可把高导电和快速 H2O2 逸出结合起来，适合作为 2e ORR 电极平台和缺陷化碳载体。"
+    };
+  }
   if (/allotrope|graphyne|fullerene|nonbenzenoid|amorphous carbon|nanoribbon|nanothread|diamane|diamond/.test(lower)) {
     return {
       priority: "P0",
