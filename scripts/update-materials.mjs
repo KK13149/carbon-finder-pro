@@ -889,7 +889,7 @@ const todayISO = new Date().toISOString().slice(0, 10);
 const blockedTitleWords = /\b(review|reviews|progress|perspective|minireview|editorial|correction|corrigendum|retraction|erratum|comment|recent advances|advances and challenges|design strategies|guidelines|xgboost|machine learning|data-driven|database|first-principles|dft|theoretical|ssrn|meeting abstract|from mechanism|from microenvironment|from active site|device design|understandings of active sites|surface\/interface engineering|catalysts for electrosynthesis|role of lightweight doping|utilizing carbonaceous catalysts)\b/i;
 const carbonWords = /\b(carbon|graphene|graphyne|graphdiyne|fullerene|nanoribbon|nanothread|nanoporous|diamond|diamane|nanotube|c2n|carbonaceous|carbon dot|coal)\b/i;
 const candidateIntentWords = /\b(allotrope|graphyne|graphdiyne|fullerene|nonbenzenoid|nanoporous|porous carbon|carbon dot|graphene|nanoribbon|nanothread|defect|edge|doped carbon|carbon aerogel|electrocatalyst|oxygen reduction|peroxide|h2o2)\b/i;
-const candidateNoiseWords = /\b(biofilm|bacterial|inflammation|thermal insulation|dimensional stability|dislocation|embrittlement|superalloy|corrosion|ceramic|ceramics|lithium storage)\b/i;
+const candidateNoiseWords = /\b(biofilm|bacterial|inflammation|thermal insulation|dimensional stability|dislocation|embrittlement|superalloy|corrosion|ceramic|ceramics|lithium storage|lithium-ion|battery anode|withdrawn|meeting abstract|electric permittivity|mechanical properties|fracture patterns|thermal transport|hydrogen and nitrogen selectivity)\b/i;
 const peroxideWords = /\b(hydrogen peroxide|h2o2|peroxide)\b/i;
 const orrWords = /\b(two-electron|2e|oxygen reduction|orr|electrosynthesis)\b/i;
 

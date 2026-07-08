@@ -4339,20 +4339,6 @@ window.CARBON_2E_ORR_LITERATURE = [
   },
   {
     "status": "已发表催化剂",
-    "year": 2022,
-    "venue": "ECS Meeting Abstracts",
-    "title": "Efficient Electrochemical Oxygen Reduction to Hydrogen Peroxide Production from Nickel-Nitrogen-Doped Mesoporous Graphene Catalyst",
-    "material": "Efficient Electrochemical Oxygen Reduction to Hydrogen Peroxide Production from Nickel-...",
-    "materialType": "N 掺杂碳",
-    "catalystClass": "氮位点调控碳",
-    "reaction": "2e ORR to H2O2",
-    "relevance": "已发表 N 掺杂碳用于二电子 ORR/H2O2，可作为氮位点和碳缺陷耦合路线的已做参照。",
-    "doi": "10.1149/ma2022-028666mtgabs",
-    "link": "https://doi.org/10.1149/ma2022-028666mtgabs",
-    "sourceKind": "文献"
-  },
-  {
-    "status": "已发表催化剂",
     "year": 2019,
     "venue": "ACS Catalysis",
     "title": "In-Plane Carbon Lattice-Defect Regulating Electrochemical Oxygen Reduction to Hydrogen Peroxide Production over Nitrogen-Doped Graphene",

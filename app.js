@@ -38,6 +38,7 @@
     category: "all",
     route: "all",
     query: "",
+    searchScope: "all",
     sort: "score",
     selectedName: ""
   };
@@ -66,11 +67,23 @@
     heroName: document.getElementById("heroName"),
     heroScore: document.getElementById("heroScore"),
     mapCanvas: document.getElementById("mapCanvas"),
+    globalSearchPanel: document.getElementById("globalSearchPanel"),
+    globalSearchScope: document.getElementById("globalSearchScope"),
+    globalSearchSummary: document.getElementById("globalSearchSummary"),
+    globalResults: document.getElementById("globalResults"),
     literatureTable: document.getElementById("literatureTable"),
     literatureSummary: document.getElementById("literatureSummary")
   };
 
   const unique = (items) => Array.from(new Set(items)).sort((a, b) => a.localeCompare(b, "zh-CN"));
+  const searchTokens = () => state.query.split(/[\s,，;；、/]+/).map((item) => item.trim()).filter(Boolean);
+  const normalizeSearch = (value) => String(value || "").toLowerCase();
+  const matchesQuery = (value) => {
+    const tokens = searchTokens();
+    if (!tokens.length) return true;
+    const haystack = normalizeSearch(value);
+    return tokens.every((token) => haystack.includes(token));
+  };
 
   function scoreMaterial(material) {
     const totalWeight = Object.values(state.weights).reduce((sum, value) => sum + value, 0) || 1;
@@ -92,6 +105,7 @@
       .filter((item) => state.route === "all" || item.route === state.route)
       .filter((item) => {
         if (!query) return true;
+        const source = getSourceInfo(item);
         const haystack = [
           item.name,
           item.route,
@@ -99,10 +113,16 @@
           item.innovation,
           item.hypothesis,
           item.experiment,
+          item.tests,
+          item.risk,
           item.action,
-          item.sourceWeight
-        ].join(" ").toLowerCase();
-        return haystack.includes(query);
+          item.sourceWeight,
+          source.kind,
+          source.venue,
+          source.year,
+          source.title
+        ].join(" ");
+        return matchesQuery(haystack);
       });
 
     return withScores(results).sort(sorter);
@@ -136,10 +156,11 @@
       const button = document.createElement("button");
       button.type = "button";
       button.textContent = priority;
+      button.dataset.priority = priority;
       button.className = "is-active";
       button.addEventListener("click", () => {
         state.priorities.has(priority) ? state.priorities.delete(priority) : state.priorities.add(priority);
-        button.classList.toggle("is-active", state.priorities.has(priority));
+        syncPriorityButtons();
         render();
       });
       els.priorityFilters.appendChild(button);
@@ -183,6 +204,11 @@
       render();
     });
 
+    els.globalSearchScope.addEventListener("change", (event) => {
+      state.searchScope = event.target.value;
+      renderUnifiedSearch();
+    });
+
     els.category.addEventListener("change", (event) => {
       state.category = event.target.value;
       render();
@@ -203,14 +229,22 @@
       state.category = "all";
       state.route = "all";
       state.query = "";
+      state.searchScope = "all";
       state.sort = "score";
       els.search.value = "";
+      els.globalSearchScope.value = "all";
       els.category.value = "all";
       els.route.value = "all";
       els.sort.value = "score";
-      Array.from(els.priorityFilters.children).forEach((button) => button.classList.add("is-active"));
+      syncPriorityButtons();
       applyPreset("创新优先", false);
       render();
+    });
+  }
+
+  function syncPriorityButtons() {
+    els.priorityFilters.querySelectorAll("[data-priority]").forEach((button) => {
+      button.classList.toggle("is-active", state.priorities.has(button.dataset.priority));
     });
   }
 
@@ -245,6 +279,7 @@
     renderTopPicks(results, selected);
     renderDetail(selected);
     renderTable(results, selected);
+    renderUnifiedSearch();
     renderLiterature(filteredLiterature());
     drawMap(results, selected);
     if (selected) {
@@ -414,6 +449,162 @@
     });
   }
 
+  function unifiedSearchItems() {
+    const tokens = searchTokens();
+    if (!tokens.length) return [];
+
+    const candidateItems = withScores(materials).map((item) => {
+      const source = getSourceInfo(item);
+      const searchText = [
+        item.name,
+        item.priority,
+        item.category,
+        item.route,
+        item.sourceWeight,
+        item.innovation,
+        item.hypothesis,
+        item.experiment,
+        item.tests,
+        item.risk,
+        item.action,
+        source.kind,
+        source.venue,
+        source.year,
+        source.title,
+        source.link
+      ].join(" ");
+      return {
+        kind: "candidate",
+        label: "候选材料",
+        title: item.name,
+        subtitle: `${item.priority} · ${item.category} · ${item.route}`,
+        year: source.year || "候选",
+        venue: source.venue,
+        material: item.category,
+        mechanism: item.hypothesis || item.innovation,
+        detail: item.innovation,
+        action: item.action,
+        link: source.link,
+        score: searchScore(searchText, Number(source.year) || 0) + item.score / 10,
+        name: item.name,
+        searchText
+      };
+    });
+
+    const publishedItems = literature.map((item) => {
+      const searchText = [
+        item.status,
+        item.year,
+        item.venue,
+        item.title,
+        item.material,
+        item.materialType,
+        item.catalystClass,
+        item.reaction,
+        item.relevance,
+        item.doi,
+        item.link,
+        item.sourceKind
+      ].join(" ");
+      return {
+        kind: "published",
+        label: "已发表文献",
+        title: item.material,
+        subtitle: `${item.year} · ${item.venue}`,
+        year: item.year,
+        venue: item.venue,
+        material: item.materialType,
+        mechanism: item.catalystClass,
+        detail: item.relevance,
+        action: item.reaction,
+        link: item.link,
+        score: searchScore(searchText, Number(item.year) || 0),
+        searchText
+      };
+    });
+
+    return candidateItems
+      .concat(publishedItems)
+      .filter((item) => state.searchScope === "all" || item.kind === state.searchScope)
+      .filter((item) => matchesQuery(item.searchText))
+      .sort((a, b) => b.score - a.score || Number(b.year || 0) - Number(a.year || 0));
+  }
+
+  function searchScore(text, year) {
+    const haystack = normalizeSearch(text);
+    const tokens = searchTokens();
+    const tokenScore = tokens.reduce((sum, token) => {
+      if (!token) return sum;
+      const index = haystack.indexOf(token);
+      if (index < 0) return sum;
+      return sum + (index < 90 ? 24 : 12) + Math.min(token.length, 12);
+    }, 0);
+    const recency = year ? Math.max(0, Math.min(8, Number(year) - 2018)) : 0;
+    return tokenScore + recency;
+  }
+
+  function renderUnifiedSearch() {
+    if (!state.query) {
+      els.globalSearchPanel.hidden = true;
+      els.globalResults.innerHTML = "";
+      return;
+    }
+
+    els.globalSearchPanel.hidden = false;
+    const items = unifiedSearchItems();
+    const candidateCount = items.filter((item) => item.kind === "candidate").length;
+    const publishedCount = items.filter((item) => item.kind === "published").length;
+    els.globalSearchSummary.textContent = `找到 ${items.length} 条：候选 ${candidateCount}，已发表 ${publishedCount}`;
+
+    if (!items.length) {
+      els.globalResults.innerHTML = `<div class="empty-state">没有找到匹配结果。可以换成年份、材料英文名、掺杂元素、孔/边缘/缺陷/*OOH 等关键词。</div>`;
+      return;
+    }
+
+    els.globalResults.innerHTML = items.map((item) => `
+      <article class="global-result ${item.kind}">
+        <span class="result-kind">${item.label}</span>
+        <div class="result-main">
+          <header>
+            <strong>${item.title}</strong>
+            <span>${item.subtitle}</span>
+          </header>
+          <p>${trimText(item.detail || item.mechanism, 168)}</p>
+          <footer>
+            <span>时间：${item.year || "待核查"}</span>
+            <span>材料/结构：${item.material || "未标注"}</span>
+            <span>机理/反应：${item.mechanism || item.action || "待核查"}</span>
+            <span>来源：${item.venue || "待核查"}</span>
+          </footer>
+        </div>
+        ${item.kind === "candidate"
+          ? `<button class="result-action" type="button" data-focus-candidate="${escapeAttr(item.name)}">定位候选</button>`
+          : `<a class="result-action" href="${item.link || "#published"}" target="_blank" rel="noreferrer">原文</a>`}
+      </article>
+    `).join("");
+
+    els.globalResults.querySelectorAll("[data-focus-candidate]").forEach((button) => {
+      button.addEventListener("click", () => focusCandidate(button.dataset.focusCandidate));
+    });
+  }
+
+  function focusCandidate(name) {
+    state.priorities = new Set(["P0", "P1", "P2", "P3"]);
+    state.category = "all";
+    state.route = "all";
+    state.selectedName = name;
+    els.category.value = "all";
+    els.route.value = "all";
+    syncPriorityButtons();
+    render();
+    document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function trimText(value, length) {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    return text.length > length ? `${text.slice(0, length - 3)}...` : text;
+  }
+
   function filteredLiterature() {
     const query = state.query;
     return literature
@@ -428,9 +619,12 @@
           item.materialType,
           item.catalystClass,
           item.reaction,
-          item.relevance
-        ].join(" ").toLowerCase();
-        return haystack.includes(query);
+          item.relevance,
+          item.doi,
+          item.link,
+          item.sourceKind
+        ].join(" ");
+        return matchesQuery(haystack);
       })
       .sort((a, b) => Number(b.year) - Number(a.year) || a.venue.localeCompare(b.venue));
   }

@@ -35,9 +35,14 @@
             <div class="search-row">
               <label class="search-box" for="searchInput">
                 <span aria-hidden="true">⌕</span>
-                <input id="searchInput" type="search" placeholder="搜索材料、结构或机理：graphyne、C60、孔、sp2/sp3、边缘..." autocomplete="off" />
+                <input id="searchInput" type="search" placeholder="搜索年份、材料、结构或机理：2025、graphdiyne、氧官能团、*OOH、空心碳..." autocomplete="off" />
               </label>
               <button class="primary-button" id="resetButton" type="button">重置视图</button>
+            </div>
+            <div class="search-helper" aria-label="搜索示例">
+              <span>发表时间：2026 / 2025 / 2024</span>
+              <span>材料：graphdiyne / carbon dots / CNT</span>
+              <span>结构机理：缺陷 / 孔 / 边缘 / *OOH / 含氧官能团</span>
             </div>
           </div>
 
@@ -55,6 +60,24 @@
               <span>高可获得性 / 高迁移潜力</span>
             </div>
           </aside>
+        </section>
+
+        <section class="global-search-panel" id="globalSearchPanel" hidden>
+          <div class="table-head compact">
+            <div>
+              <p>Unified search</p>
+              <h2>统一检索结果</h2>
+            </div>
+            <div class="global-search-tools">
+              <span id="globalSearchSummary">输入关键词后显示结果</span>
+              <select id="globalSearchScope" aria-label="结果类型">
+                <option value="all">全部结果</option>
+                <option value="candidate">只看候选材料</option>
+                <option value="published">只看已发表文献</option>
+              </select>
+            </div>
+          </div>
+          <div class="global-results" id="globalResults"></div>
         </section>
 
         <section class="control-deck" aria-label="筛选与排序">
