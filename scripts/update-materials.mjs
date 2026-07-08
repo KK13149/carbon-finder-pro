@@ -502,7 +502,23 @@ const literatureQueries = [
   "carbon nitride hydrogen peroxide oxygen reduction electrocatalyst",
   "mesoporous carbon hydrogen peroxide oxygen reduction",
   "coal based carbon hydrogen peroxide oxygen reduction",
-  "heteroatom doped carbon H2O2 electrosynthesis"
+  "heteroatom doped carbon H2O2 electrosynthesis",
+  "fullerene C60 carbon nanotube oxygen reduction electrocatalyst",
+  "doped fullerene oxygen reduction reaction carbon catalyst",
+  "carbon nanohorn oxygen reduction reaction electrocatalyst carbon",
+  "single walled carbon nanohorns oxygen reduction reaction",
+  "graphdiyne oxygen reduction reaction electrocatalyst carbon",
+  "graphdiyne carbon nanotubes two-electron oxygen reduction",
+  "three-dimensional graphene aerogel oxygen reduction reaction carbon",
+  "3D carbon framework oxygen reduction reaction electrocatalyst",
+  "covalent organic framework derived carbon oxygen reduction reaction catalyst",
+  "two-dimensional covalent framework derived carbon oxygen reduction",
+  "metal organic framework derived carbon oxygen reduction reaction catalyst",
+  "ZIF derived nitrogen doped carbon oxygen reduction reaction",
+  "hydrogen bonded organic framework derived carbon oxygen reduction reaction",
+  "porous organic framework derived carbon oxygen reduction reaction",
+  "porous aromatic framework derived carbon oxygen reduction reaction",
+  "hypercrosslinked polymer derived porous carbon oxygen reduction reaction"
 ];
 
 const curatedPublishedLiterature = [
@@ -903,11 +919,12 @@ const curatedPublishedLiterature = [
 const currentYear = new Date().getFullYear();
 const todayISO = new Date().toISOString().slice(0, 10);
 const blockedTitleWords = /\b(review|reviews|progress|perspective|minireview|editorial|correction|corrigendum|retraction|erratum|comment|recent advances|advances and challenges|design strategies|guidelines|xgboost|machine learning|data-driven|database|first-principles|dft|theoretical|ssrn|meeting abstract|from mechanism|from microenvironment|from active site|device design|understandings of active sites|surface\/interface engineering|catalysts for electrosynthesis|role of lightweight doping|utilizing carbonaceous catalysts)\b/i;
-const carbonWords = /\b(carbon|graphene|graphyne|graphdiyne|fullerene|nanoribbon|nanothread|nanoporous|diamond|diamane|nanotube|c2n|carbonaceous|carbon dot|coal)\b/i;
+const carbonWords = /\b(carbon|graphene|graphyne|graphdiyne|fullerene|nanohorn|nano-horn|nanoribbon|nanothread|nanoporous|diamond|diamane|nanotube|c2n|carbonaceous|carbon dot|coal|covalent organic framework|metal organic framework|hydrogen bonded organic framework|porous organic framework|porous aromatic framework|hypercrosslinked|hyper-crosslinked|cof|mof|hof|xof|paf|pop|zif)\b/i;
 const candidateIntentWords = /\b(allotrope|graphyne|graphdiyne|fullerene|metallofullerene|endofullerene|endohedral|nanohorn|nano-horn|nonbenzenoid|nanoporous|porous carbon|carbon dot|graphene|nanoribbon|nanothread|defect|edge|doped carbon|carbon aerogel|carbon foam|3d graphene|organic framework|covalent organic framework|metal organic framework|hydrogen bonded organic framework|porous aromatic framework|hypercrosslinked|hyper-crosslinked|cof|mof|hof|xof|paf|pop|framework-derived|derived carbon|electrocatalyst|oxygen reduction|peroxide|h2o2)\b/i;
 const candidateNoiseWords = /\b(biofilm|bacterial|inflammation|thermal insulation|dimensional stability|dislocation|embrittlement|superalloy|corrosion|ceramic|ceramics|lithium storage|lithium-ion|battery anode|withdrawn|meeting abstract|electric permittivity|mechanical properties|fracture patterns|thermal transport|hydrogen and nitrogen selectivity)\b/i;
 const peroxideWords = /\b(hydrogen peroxide|h2o2|peroxide)\b/i;
 const orrWords = /\b(two-electron|2e|oxygen reduction|orr|electrosynthesis)\b/i;
+const orrReferenceCategoryWords = /\b(fullerene|metallofullerene|endofullerene|endohedral|nanohorn|nano-horn|graphdiyne|graphyne|3d graphene|three-dimensional graphene|graphene aerogel|carbon framework|covalent organic framework|metal organic framework|hydrogen bonded organic framework|porous organic framework|porous aromatic framework|hypercrosslinked|hyper-crosslinked|cof|mof|hof|xof|paf|pop|zif)\b/i;
 
 const existingNames = new Set(materials.map((item) => normalize(item.name)));
 const existingSourceTitles = new Set(Object.values(sourceDetails).map((item) => normalize(item.title || "")).filter(Boolean));
@@ -1098,12 +1115,14 @@ function workToPublishedLiterature(work) {
   const text = `${meta.title} ${meta.venue}`;
   if (!meta.title || !meta.venue || blockedTitleWords.test(text)) return null;
   if (Number(meta.year) > currentYear) return null;
-  if (!peroxideWords.test(text) || !orrWords.test(text)) return null;
+  const isPeroxideLiterature = peroxideWords.test(text);
+  const isTargetedOrrReference = orrReferenceCategoryWords.test(text);
+  if (!orrWords.test(text) || (!isPeroxideLiterature && !isTargetedOrrReference)) return null;
   if (!carbonWords.test(text)) return null;
 
   const classification = classifyPublishedCatalyst(meta.title);
   return {
-    status: "已发表催化剂",
+    status: isPeroxideLiterature ? "已发表 2e ORR" : "已发表 ORR 参考",
     year: Number(meta.year),
     venue: meta.venue,
     title: meta.title,
@@ -1278,6 +1297,72 @@ function classifyCandidate(title) {
 
 function classifyPublishedCatalyst(title) {
   const lower = title.toLowerCase();
+  const isTwoElectron = /two-electron|2e|hydrogen peroxide|h2o2|peroxide/.test(lower);
+  if (/fullerene|c60|metallofullerene|endofullerene|endohedral/.test(lower)) {
+    return {
+      material: extractMaterial(title, "Fullerene carbon catalyst"),
+      materialType: /metallofullerene|endofullerene|endohedral/.test(lower) ? "金属富勒烯/内嵌富勒烯" : "富勒烯/碳笼材料",
+      catalystClass: "富勒烯调控碳基 ORR 催化剂",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: isTwoElectron
+        ? "已发表富勒烯碳材料用于二电子 ORR/H2O2，可作为 C60/富勒烯候选路线的直接参照。"
+        : "已发表富勒烯相关 ORR 文献，可作为 C60/金属富勒烯候选路线的文献边界；需另测 H2O2 选择性。"
+    };
+  }
+  if (/nanohorn|nano-horn/.test(lower)) {
+    return {
+      material: extractMaterial(title, "Carbon nanohorn catalyst"),
+      materialType: "碳纳米角",
+      catalystClass: "曲率/锥角碳 ORR 参考",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: "已发表碳纳米角相关 ORR 文献极少，因此进入库后主要用于提示该方向仍是空白较大的曲率碳路线。"
+    };
+  }
+  if (/covalent organic framework|cof|two-dimensional covalent framework/.test(lower)) {
+    return {
+      material: extractMaterial(title, "COF-derived carbon catalyst"),
+      materialType: "COF/二维共价框架衍生碳",
+      catalystClass: "框架预组织孔/位点碳",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: "已发表 COF/二维共价框架衍生碳用于 ORR，可作为 COF 碳化、去金属和 H2O2 分解对照的文献边界。"
+    };
+  }
+  if (/metal organic framework|mof|zif|zeolitic imidazolate framework/.test(lower)) {
+    return {
+      material: extractMaterial(title, "MOF/ZIF-derived carbon catalyst"),
+      materialType: "MOF/ZIF 衍生碳",
+      catalystClass: "MOF 衍生孔结构/单原子碳",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。"
+    };
+  }
+  if (/hydrogen-bonded organic framework|hydrogen bonded organic framework|hof/.test(lower)) {
+    return {
+      material: extractMaterial(title, "HOF-derived carbon catalyst"),
+      materialType: "HOF 衍生碳",
+      catalystClass: "氢键有机框架衍生微孔碳",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: "已发表 HOF 衍生碳 ORR 文献，可作为 HOF 前驱体路线从候选走向实验证据的关键边界。"
+    };
+  }
+  if (/porous organic polymer|porous organic framework|porous aromatic framework|hypercrosslinked|hyper-crosslinked|paf|pop|xof/.test(lower)) {
+    return {
+      material: extractMaterial(title, "XOF/POP-derived carbon catalyst"),
+      materialType: "XOF/PAF/POP 衍生碳",
+      catalystClass: "交联/芳香有机框架衍生多孔碳",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: "已发表 XOF/POP/PAF 类框架衍生碳用于 ORR，可作为低成本可放量框架碳路线的已做参照。"
+    };
+  }
+  if (/three-dimensional|3d|graphene aerogel|carbon framework|carbon foam/.test(lower)) {
+    return {
+      material: extractMaterial(title, "3D carbon catalyst"),
+      materialType: "三维碳/碳框架",
+      catalystClass: "三维导电孔结构 ORR 碳材料",
+      reaction: isTwoElectron ? "2e ORR to H2O2" : "ORR reference",
+      relevance: "已发表三维碳材料用于 ORR，可作为后续构建 2e ORR 电极平台和 H2O2 传质对照。"
+    };
+  }
   if (/graphdiyne|graphyne/.test(lower)) {
     return {
       material: extractMaterial(title, "Graphdiyne / graphyne carbon"),

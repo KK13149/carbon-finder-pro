@@ -631,7 +631,7 @@
 
   function renderLiterature(items) {
     els.statLiterature.textContent = literature.length;
-    els.literatureSummary.textContent = `显示 ${items.length} / ${literature.length} 条已发表碳基 2e ORR 文献`;
+    els.literatureSummary.textContent = `显示 ${items.length} / ${literature.length} 条已发表碳基 ORR / 2e H2O2 文献`;
     if (!items.length) {
       els.literatureTable.innerHTML = `<div class="empty-state">当前关键词下没有匹配的已发表文献。</div>`;
       return;
