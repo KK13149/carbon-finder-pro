@@ -2983,9 +2983,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-07-09 04:45 Asia/Shanghai",
+  "updatedAt": "2026-07-10 05:07 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料新增 11 条，目标大于 10 条/日；已发表 2e ORR 碳文献新增 18 条，目标大于 30 条/日"
+  "lastRunSummary": "候选材料本轮无新增；已发表 2e ORR 碳文献新增 5 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6147,6 +6147,76 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
     "doi": "10.1016/j.ijhydene.2017.04.050",
     "link": "https://doi.org/10.1016/j.ijhydene.2017.04.050",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2026,
+    "venue": "Materials Today Energy",
+    "title": "Integrated fabrication and synergistic electrocatalysis of ceria and surface-oxygen-rich carbon for high-performance oxygen reduction toward hydrogen peroxide",
+    "material": "Integrated fabrication and synergistic electrocatalysis of ceria and surface-oxygen-ric...",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1016/j.mtener.2026.102190",
+    "link": "https://doi.org/10.1016/j.mtener.2026.102190",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2025,
+    "venue": "International Journal of Hydrogen Energy",
+    "title": "Efficient metal-free P-doped carbon electrocatalyst derived from fullerene towards oxygen reduction",
+    "material": "Efficient metal-free P-doped carbon electrocatalyst derived from fullerene towards oxyg...",
+    "materialType": "富勒烯/碳笼材料",
+    "catalystClass": "富勒烯调控碳基 ORR 催化剂",
+    "reaction": "ORR reference",
+    "relevance": "已发表富勒烯相关 ORR 文献，可作为 C60/金属富勒烯候选路线的文献边界；需另测 H2O2 选择性。",
+    "doi": "10.1016/j.ijhydene.2025.152496",
+    "link": "https://doi.org/10.1016/j.ijhydene.2025.152496",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2025,
+    "venue": "ECS Meeting Abstracts",
+    "title": "Rational Design of Carbon Nanostructures for Selective Hydrogen Peroxide Electrosynthesis",
+    "material": "Rational Design of Carbon Nanostructures",
+    "materialType": "碳基催化剂",
+    "catalystClass": "碳基 2e ORR 催化剂",
+    "reaction": "2e ORR / H2O2 electrosynthesis",
+    "relevance": "已发表碳基催化剂用于二电子 ORR 或 H2O2 电合成，可作为候选材料路线的文献边界。",
+    "doi": "10.1149/ma2025-0291050mtgabs",
+    "link": "https://doi.org/10.1149/ma2025-0291050mtgabs",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2022,
+    "venue": "Chemical Engineering Journal",
+    "title": "Preparation of sodium and boron co-doped graphitic carbon nitride for the enhanced production of H2O2 via two-electron oxygen reduction and the degradation of 2,4-DCP via photocatalytic oxidation coupled with Fenton oxidation",
+    "material": "Preparation of sodium and boron co-doped graphitic carbon nitride",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1016/j.cej.2021.134020",
+    "link": "https://doi.org/10.1016/j.cej.2021.134020",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2020,
+    "venue": "Russian Journal of Electrochemistry",
+    "title": "The Effect of Polytetrafluoroethylene Content in Porous Carbon Materials on Their Structural and Electrochemical Characteristics by the Example of Oxygen Reduction to Hydrogen Peroxide",
+    "material": "The Effect of Polytetrafluoroethylene Content",
+    "materialType": "F 掺杂碳",
+    "catalystClass": "氟掺杂/表面极化碳",
+    "reaction": "ORR to peroxide/H2O2",
+    "relevance": "已发表 F 掺杂碳用于过氧化物生成，可作为氟化碳候选路线的已做参照。",
+    "doi": "10.1134/s1023193520060105",
+    "link": "https://doi.org/10.1134/s1023193520060105",
     "sourceKind": "文献"
   }
 ];
