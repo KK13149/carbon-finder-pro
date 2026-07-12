@@ -3423,9 +3423,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-07-12 04:10 Asia/Shanghai",
+  "updatedAt": "2026-07-13 04:08 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料新增 11 条，目标大于 10 条/日；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料本轮无新增；已发表 2e ORR 碳文献新增 3 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6811,6 +6811,48 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表 F 掺杂碳用于过氧化物生成，可作为氟化碳候选路线的已做参照。",
     "doi": "10.1134/s1023193520060105",
     "link": "https://doi.org/10.1134/s1023193520060105",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2020,
+    "venue": "Catalysts",
+    "title": "MnS-Nanoparticles-Decorated Three-Dimensional Graphene Hybrid as Highly Efficient Bifunctional Electrocatalyst for Hydrogen Evolution Reaction and Oxygen Reduction Reaction",
+    "material": "MnS-Nanoparticles-Decorated Three-Dimensional Graphene Hybrid as Highly Efficient Bifun...",
+    "materialType": "三维碳/碳框架",
+    "catalystClass": "三维导电孔结构 ORR 碳材料",
+    "reaction": "ORR reference",
+    "relevance": "已发表三维碳材料用于 ORR，可作为后续构建 2e ORR 电极平台和 H2O2 传质对照。",
+    "doi": "10.3390/catal10101141",
+    "link": "https://doi.org/10.3390/catal10101141",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2018,
+    "venue": "Sustainable Energy &amp; Fuels",
+    "title": "A quadrafunctional electrocatalyst of nickel/nickel oxide embedded N-graphene for oxygen reduction, oxygen evolution, hydrogen evolution and hydrogen peroxide oxidation reactions",
+    "material": "A quadrafunctional electrocatalyst of nickel/nickel oxide embedded N-graphene",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1039/c8se00068a",
+    "link": "https://doi.org/10.1039/c8se00068a",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2017,
+    "venue": "International Journal of Hydrogen Energy",
+    "title": "Thermal treated 3D graphene as a highly efficient metal-free electrocatalyst toward oxygen reduction reaction",
+    "material": "Thermal treated 3D graphene as a highly efficient metal-free electrocatalyst",
+    "materialType": "三维碳/碳框架",
+    "catalystClass": "三维导电孔结构 ORR 碳材料",
+    "reaction": "ORR reference",
+    "relevance": "已发表三维碳材料用于 ORR，可作为后续构建 2e ORR 电极平台和 H2O2 传质对照。",
+    "doi": "10.1016/j.ijhydene.2017.09.140",
+    "link": "https://doi.org/10.1016/j.ijhydene.2017.09.140",
     "sourceKind": "文献"
   }
 ];
