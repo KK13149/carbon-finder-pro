@@ -3863,9 +3863,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-07-15 04:35 Asia/Shanghai",
+  "updatedAt": "2026-07-16 04:18 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料新增 11 条，目标大于 10 条/日；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料本轮无新增；已发表 2e ORR 碳文献新增 2 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -7447,6 +7447,34 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表三维碳材料用于 ORR，可作为后续构建 2e ORR 电极平台和 H2O2 传质对照。",
     "doi": "10.1016/j.ijhydene.2017.09.140",
     "link": "https://doi.org/10.1016/j.ijhydene.2017.09.140",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2026,
+    "venue": "Discover Electrochemistry",
+    "title": "Carbon dots and graphene nanocomposite as an electrocatalyst for selective two electron oxygen reduction to H2O2",
+    "material": "Carbon dots and graphene nanocomposite as an electrocatalyst",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1007/s44373-026-00150-1",
+    "link": "https://doi.org/10.1007/s44373-026-00150-1",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2018,
+    "venue": "RSC Advances",
+    "title": "MOF derived carbon based nanocomposite materials as efficient electrocatalysts for oxygen reduction and oxygen and hydrogen evolution reactions",
+    "material": "MOF derived carbon based nanocomposite materials as efficient electrocatalysts",
+    "materialType": "MOF/ZIF 衍生碳",
+    "catalystClass": "MOF 衍生孔结构/单原子碳",
+    "reaction": "ORR reference",
+    "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
+    "doi": "10.1039/c8ra05102j",
+    "link": "https://doi.org/10.1039/c8ra05102j",
     "sourceKind": "文献"
   }
 ];
