@@ -4518,14 +4518,194 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 227,
+    "name": "Ferrocene-based porous organic polymer derived N-doped porous carbon/Fe 3 C nanocrystal hybri...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Sustainable Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1039/d0se01692f",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 228,
+    "name": "Shape-stabilized phase-change materials supported by eggplant-derived porous carbon for effic...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Sustainable Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1039/c9se01272a",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 229,
+    "name": "Rationally constructing nitrogen–fluorine heteroatoms on porous carbon derived from pomegrana...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Sustainable Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1039/d0se01214a",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 5,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 230,
+    "name": "MOF-derived carbon coated Cu 3 P with Ni doping as advanced supercapacitor electrode materials",
+    "route": "MOF 衍生碳/孔结构与金属残留调控",
+    "category": "MOF 衍生碳",
+    "sourceWeight": "Sustainable Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1039/d2se01024k",
+    "novelty": 4,
+    "evidence": 5,
+    "transfer": 3,
+    "access": 4,
+    "blank": 3,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 MOF 衍生碳/孔结构与金属残留调控，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "MOF 衍生碳可快速建立孔结构、N 位点和金属残留矩阵，但用于 2e ORR 时必须重点排查 4e ORR 与 H2O2 分解。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 231,
+    "name": "Hierarchical porous carbon derived from eucalyptus-bark as a sustainable electrode for high-p...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Sustainable Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1039/c9se00812h",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 232,
+    "name": "Enhancing the Electrochemical Oxygen Reduction Activity of PPy-Derived Porous Carbon through ...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1021/acs.energyfuels.4c05356",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 5,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 233,
+    "name": "Biomass-Derived Porous Carbon: Synthesis and Application for Energy Conversion and Storage",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Advanced Materials Science and Technology / 顶刊子刊",
+    "source": "https://doi.org/10.37155/2717-526x-0501-1",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 234,
+    "name": "Bioinspired Sustainable Sheetlike Porous Carbon Derived from Cassia fistula Flower Petal as a...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Energy &amp; Fuels / 文献来源",
+    "source": "https://doi.org/10.1021/acs.energyfuels.2c02228",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P3",
+    "rank": 235,
+    "name": "Lignin‐derived carbon fibers: A green path from biomass to advanced materials",
+    "route": "碳基异质结/复合结构",
+    "category": "碳基复合",
+    "sourceWeight": "Carbon Energy / 文献来源",
+    "source": "https://doi.org/10.1002/cey2.662",
+    "novelty": 3,
+    "evidence": 4,
+    "transfer": 3,
+    "access": 3,
+    "blank": 3,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 碳基异质结/复合结构，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "异质界面可能改变电子传输、局部亲疏水性和 O2 传质，更适合作为工程放大或对照方向。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-07-20 04:10 Asia/Shanghai",
+  "updatedAt": "2026-07-21 04:50 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料新增 11 条，目标大于 10 条/日；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料新增 9 条，目标大于 10 条/日；已发表 2e ORR 碳文献新增 1 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6110,6 +6290,69 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2025",
     "title": "Microstructural Engineering of Bimetallic Co/Zn ZIF-Derived Hierarchically Porous Carbon Nanocubes for Advanced Oxygen Reduction Electrocatalysts",
     "link": "https://doi.org/10.1021/acs.energyfuels.4c02613"
+  },
+  "Ferrocene-based porous organic polymer derived N-doped porous carbon/Fe 3 C nanocrystal hybri...": {
+    "kind": "文献",
+    "venue": "Sustainable Energy &amp; Fuels",
+    "year": "2021",
+    "title": "Ferrocene-based porous organic polymer derived N-doped porous carbon/Fe 3 C nanocrystal hybrids towards high-efficiency ORR for Zn–air batteries",
+    "link": "https://doi.org/10.1039/d0se01692f"
+  },
+  "Shape-stabilized phase-change materials supported by eggplant-derived porous carbon for effic...": {
+    "kind": "文献",
+    "venue": "Sustainable Energy &amp; Fuels",
+    "year": "2020",
+    "title": "Shape-stabilized phase-change materials supported by eggplant-derived porous carbon for efficient solar-to-thermal energy conversion and storage",
+    "link": "https://doi.org/10.1039/c9se01272a"
+  },
+  "Rationally constructing nitrogen–fluorine heteroatoms on porous carbon derived from pomegrana...": {
+    "kind": "文献",
+    "venue": "Sustainable Energy &amp; Fuels",
+    "year": "2021",
+    "title": "Rationally constructing nitrogen–fluorine heteroatoms on porous carbon derived from pomegranate fruit peel waste towards an efficient oxygen reduction catalyst for polymer electrolyte membrane fuel cells",
+    "link": "https://doi.org/10.1039/d0se01214a"
+  },
+  "MOF-derived carbon coated Cu 3 P with Ni doping as advanced supercapacitor electrode materials": {
+    "kind": "文献",
+    "venue": "Sustainable Energy &amp; Fuels",
+    "year": "2022",
+    "title": "MOF-derived carbon coated Cu 3 P with Ni doping as advanced supercapacitor electrode materials",
+    "link": "https://doi.org/10.1039/d2se01024k"
+  },
+  "Hierarchical porous carbon derived from eucalyptus-bark as a sustainable electrode for high-p...": {
+    "kind": "文献",
+    "venue": "Sustainable Energy &amp; Fuels",
+    "year": "2020",
+    "title": "Hierarchical porous carbon derived from eucalyptus-bark as a sustainable electrode for high-performance solid-state supercapacitors",
+    "link": "https://doi.org/10.1039/c9se00812h"
+  },
+  "Enhancing the Electrochemical Oxygen Reduction Activity of PPy-Derived Porous Carbon through ...": {
+    "kind": "文献",
+    "venue": "Energy &amp; Fuels",
+    "year": "2025",
+    "title": "Enhancing the Electrochemical Oxygen Reduction Activity of PPy-Derived Porous Carbon through a Facile Ternary Doping Approach",
+    "link": "https://doi.org/10.1021/acs.energyfuels.4c05356"
+  },
+  "Biomass-Derived Porous Carbon: Synthesis and Application for Energy Conversion and Storage": {
+    "kind": "文献",
+    "venue": "Advanced Materials Science and Technology",
+    "year": "2023",
+    "title": "Biomass-Derived Porous Carbon: Synthesis and Application for Energy Conversion and Storage",
+    "link": "https://doi.org/10.37155/2717-526x-0501-1"
+  },
+  "Bioinspired Sustainable Sheetlike Porous Carbon Derived from Cassia fistula Flower Petal as a...": {
+    "kind": "文献",
+    "venue": "Energy &amp; Fuels",
+    "year": "2022",
+    "title": "Bioinspired Sustainable Sheetlike Porous Carbon Derived from Cassia fistula Flower Petal as an Electrode for High-Performance Supercapacitors",
+    "link": "https://doi.org/10.1021/acs.energyfuels.2c02228"
+  },
+  "Lignin‐derived carbon fibers: A green path from biomass to advanced materials": {
+    "kind": "文献",
+    "venue": "Carbon Energy",
+    "year": "2025",
+    "title": "Lignin‐derived carbon fibers: A green path from biomass to advanced materials",
+    "link": "https://doi.org/10.1002/cey2.662"
   }
 };
 
@@ -8464,6 +8707,20 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
     "doi": "10.1007/s10853-017-1768-0",
     "link": "https://doi.org/10.1007/s10853-017-1768-0",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2025,
+    "venue": "Advanced Materials",
+    "title": "Atomically Dispersed Co/Mo Sites Anchored on Mesoporous Carbon Hollow Spheres for Highly Selective Oxygen Reduction to Hydrogen Peroxide in Acidic Media",
+    "material": "Atomically Dispersed Co/Mo Sites Anchored on Mesoporous Carbon Hollow Spheres",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1002/adma.202416401",
+    "link": "https://doi.org/10.1002/adma.202416401",
     "sourceKind": "文献"
   }
 ];
