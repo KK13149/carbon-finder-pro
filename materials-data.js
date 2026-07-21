@@ -4698,14 +4698,54 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P0",
+    "rank": 236,
+    "name": "Newly discovered graphyne allotrope with rare and robust Dirac node loop",
+    "route": "新碳相/纯碳拓扑",
+    "category": "纯碳",
+    "sourceWeight": "Nanoscale / 文献来源",
+    "source": "https://doi.org/10.1039/d0nr08397f",
+    "novelty": 5,
+    "evidence": 5,
+    "transfer": 4,
+    "access": 2,
+    "blank": 5,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 新碳相/纯碳拓扑，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "新碳相或纯碳拓扑可能提供非常规 *OOH 吸附位点、曲率/应变或非六元环效应，适合做二电子 ORR 的跨方向验证。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 237,
+    "name": "ZIF-derived Co@N-doped porous carbon for efficient aromatic derivatives hydrogenation",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Chemical Communications / 文献来源",
+    "source": "https://doi.org/10.1039/d6cc02926d",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-07-21 04:50 Asia/Shanghai",
+  "updatedAt": "2026-07-22 04:47 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料新增 9 条，目标大于 10 条/日；已发表 2e ORR 碳文献新增 1 条，目标大于 30 条/日"
+  "lastRunSummary": "候选材料新增 2 条，目标大于 10 条/日；已发表 2e ORR 碳文献新增 1 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6353,6 +6393,20 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2025",
     "title": "Lignin‐derived carbon fibers: A green path from biomass to advanced materials",
     "link": "https://doi.org/10.1002/cey2.662"
+  },
+  "Newly discovered graphyne allotrope with rare and robust Dirac node loop": {
+    "kind": "文献",
+    "venue": "Nanoscale",
+    "year": "2021",
+    "title": "Newly discovered graphyne allotrope with rare and robust Dirac node loop",
+    "link": "https://doi.org/10.1039/d0nr08397f"
+  },
+  "ZIF-derived Co@N-doped porous carbon for efficient aromatic derivatives hydrogenation": {
+    "kind": "文献",
+    "venue": "Chemical Communications",
+    "year": "2026",
+    "title": "ZIF-derived Co@N-doped porous carbon for efficient aromatic derivatives hydrogenation",
+    "link": "https://doi.org/10.1039/d6cc02926d"
   }
 };
 
@@ -8721,6 +8775,20 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
     "doi": "10.1002/adma.202416401",
     "link": "https://doi.org/10.1002/adma.202416401",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2026,
+    "venue": "Journal of Materials Chemistry A",
+    "title": "Interfacial Electronic Regulation of Amorphous NiOx Catalyst on Oxygen-Functionalized Carbon for H2O2 Electrosynthesis",
+    "material": "Interfacial Electronic Regulation of Amorphous NiOx Catalyst on Oxygen-Functionalized C...",
+    "materialType": "O 掺杂/含氧官能团碳",
+    "catalystClass": "含氧官能团碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
+    "doi": "10.1039/d6ta04915j",
+    "link": "https://doi.org/10.1039/d6ta04915j",
     "sourceKind": "文献"
   }
 ];
