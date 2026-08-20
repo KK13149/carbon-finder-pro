@@ -4818,14 +4818,54 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P0",
+    "rank": 242,
+    "name": "Symmetric ambipolar graphene nanoribbon FETs for ultralow-power complementary logic",
+    "route": "新碳相/纯碳拓扑",
+    "category": "纯碳",
+    "sourceWeight": "Carbon / 文献来源",
+    "source": "https://doi.org/10.1016/j.carbon.2026.121875",
+    "novelty": 5,
+    "evidence": 5,
+    "transfer": 4,
+    "access": 2,
+    "blank": 5,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 新碳相/纯碳拓扑，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "新碳相或纯碳拓扑可能提供非常规 *OOH 吸附位点、曲率/应变或非六元环效应，适合做二电子 ORR 的跨方向验证。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 243,
+    "name": "Three-dimensional Porous Graphene/Polyaniline Hybrids for High Performance Supercapacitor Ele...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Research and Application of Materials Science / 顶刊子刊",
+    "source": "https://doi.org/10.33142/msra.v2i1.1974",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-08-20 00:48 Asia/Shanghai",
+  "updatedAt": "2026-08-21 00:52 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料新增 2 条，目标大于 10 条/日；已发表文献本轮无新增"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6515,6 +6555,20 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2023",
     "title": "A polypyrrole derived nitrogen doped porous carbon support for an atomically dispersed Mn electrocatalyst for the oxygen reduction reaction",
     "link": "https://doi.org/10.1039/d3se00495c"
+  },
+  "Symmetric ambipolar graphene nanoribbon FETs for ultralow-power complementary logic": {
+    "kind": "文献",
+    "venue": "Carbon",
+    "year": "2026",
+    "title": "Symmetric ambipolar graphene nanoribbon FETs for ultralow-power complementary logic",
+    "link": "https://doi.org/10.1016/j.carbon.2026.121875"
+  },
+  "Three-dimensional Porous Graphene/Polyaniline Hybrids for High Performance Supercapacitor Ele...": {
+    "kind": "文献",
+    "venue": "Research and Application of Materials Science",
+    "year": "2020",
+    "title": "Three-dimensional Porous Graphene/Polyaniline Hybrids for High Performance Supercapacitor Electrodes",
+    "link": "https://doi.org/10.33142/msra.v2i1.1974"
   }
 };
 
