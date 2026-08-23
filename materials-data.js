@@ -4858,14 +4858,34 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 244,
+    "name": "Biomass-derived fire-retardant porous carbon towards efficient electromagnetic wave absorptio...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Carbon / 文献来源",
+    "source": "https://doi.org/10.1016/j.carbon.2024.119268",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-08-23 00:42 Asia/Shanghai",
+  "updatedAt": "2026-08-24 00:44 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料新增 1 条，目标大于 10 条/日；已发表文献本轮无新增"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6569,6 +6589,13 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2020",
     "title": "Three-dimensional Porous Graphene/Polyaniline Hybrids for High Performance Supercapacitor Electrodes",
     "link": "https://doi.org/10.33142/msra.v2i1.1974"
+  },
+  "Biomass-derived fire-retardant porous carbon towards efficient electromagnetic wave absorptio...": {
+    "kind": "文献",
+    "venue": "Carbon",
+    "year": "2024",
+    "title": "Biomass-derived fire-retardant porous carbon towards efficient electromagnetic wave absorption and shielding",
+    "link": "https://doi.org/10.1016/j.carbon.2024.119268"
   }
 };
 
