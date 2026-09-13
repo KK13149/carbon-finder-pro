@@ -4923,9 +4923,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-09-13 02:26 Asia/Shanghai",
+  "updatedAt": "2026-09-14 02:48 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料本轮无新增；已发表 2e ORR 碳文献新增 4 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -9228,6 +9228,62 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
     "doi": "10.1007/s12274-017-1611-6",
     "link": "https://doi.org/10.1007/s12274-017-1611-6",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2021,
+    "venue": "Journal of Power Sources",
+    "title": "Metal organic framework derived iron-nitrogen doped porous carbon support decorated with cobalt and iron as efficient nanocatalyst toward oxygen reduction reaction",
+    "material": "Metal organic framework derived iron-nitrogen doped porous carbon support decorated wit...",
+    "materialType": "MOF/ZIF 衍生碳",
+    "catalystClass": "MOF 衍生孔结构/单原子碳",
+    "reaction": "ORR reference",
+    "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
+    "doi": "10.1016/j.jpowsour.2021.229956",
+    "link": "https://doi.org/10.1016/j.jpowsour.2021.229956",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2020,
+    "venue": "Nanomaterials",
+    "title": "Metal Organic Framework Derived MnO2-Carbon Nanotubes for Efficient Oxygen Reduction Reaction and Arsenic Removal from Contaminated Water",
+    "material": "Metal Organic Framework Derived MnO2-Carbon Nanotubes",
+    "materialType": "MOF/ZIF 衍生碳",
+    "catalystClass": "MOF 衍生孔结构/单原子碳",
+    "reaction": "ORR reference",
+    "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
+    "doi": "10.3390/nano10091895",
+    "link": "https://doi.org/10.3390/nano10091895",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2020,
+    "venue": "Advanced Sustainable Systems",
+    "title": "Ni/Fe Clusters and Nanoparticles Confined by Covalent Organic Framework Derived Carbon as Highly Active Catalysts toward Oxygen Reduction Reaction and Oxygen Evolution Reaction",
+    "material": "Ni/Fe Clusters and Nanoparticles Confined by Covalent Organic Framework Derived Carbon ...",
+    "materialType": "COF/二维共价框架衍生碳",
+    "catalystClass": "框架预组织孔/位点碳",
+    "reaction": "ORR reference",
+    "relevance": "已发表 COF/二维共价框架衍生碳用于 ORR，可作为 COF 碳化、去金属和 H2O2 分解对照的文献边界。",
+    "doi": "10.1002/adsu.202000115",
+    "link": "https://doi.org/10.1002/adsu.202000115",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 ORR 参考",
+    "year": 2020,
+    "venue": "Materials Today Energy",
+    "title": "A pair of metal organic framework (MOF)-derived oxygen reduction reaction (ORR) and oxygen evolution reaction (OER) catalysts for zinc-air batteries",
+    "material": "A pair of metal organic framework (MOF)-derived oxygen reduction reaction (ORR) and oxy...",
+    "materialType": "MOF/ZIF 衍生碳",
+    "catalystClass": "MOF 衍生孔结构/单原子碳",
+    "reaction": "ORR reference",
+    "relevance": "已发表 MOF/ZIF 衍生碳用于 ORR，常偏 4e 或燃料电池方向；用于 2e ORR 时需重点排查 H2O2 分解。",
+    "doi": "10.1016/j.mtener.2020.100405",
+    "link": "https://doi.org/10.1016/j.mtener.2020.100405",
     "sourceKind": "文献"
   }
 ];
