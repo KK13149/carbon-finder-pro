@@ -4923,9 +4923,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-09-14 02:48 Asia/Shanghai",
+  "updatedAt": "2026-09-15 04:20 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表 2e ORR 碳文献新增 4 条，目标大于 30 条/日"
+  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
 };
 
 window.CARBON_SOURCE_DETAILS = {
