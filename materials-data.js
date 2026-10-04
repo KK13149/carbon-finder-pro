@@ -4918,14 +4918,34 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P0",
+    "rank": 247,
+    "name": "Switching spin-polarized currents in rhombohedral multilayer graphene nanoribbon transistors ...",
+    "route": "新碳相/纯碳拓扑",
+    "category": "纯碳",
+    "sourceWeight": "Carbon / 文献来源",
+    "source": "https://doi.org/10.1016/j.carbon.2026.121907",
+    "novelty": 5,
+    "evidence": 5,
+    "transfer": 4,
+    "access": 2,
+    "blank": 5,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 新碳相/纯碳拓扑，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "新碳相或纯碳拓扑可能提供非常规 *OOH 吸附位点、曲率/应变或非六元环效应，适合做二电子 ORR 的跨方向验证。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-10-04 03:15 Asia/Shanghai",
+  "updatedAt": "2026-10-05 03:40 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料新增 1 条，目标大于 10 条/日；已发表文献本轮无新增"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6650,6 +6670,13 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2024",
     "title": "Porous carbon derived from covalent organic frameworks and relevant porous polymers: Preparation and application in adsorption and catalysis",
     "link": "https://doi.org/10.1016/j.cej.2024.156148"
+  },
+  "Switching spin-polarized currents in rhombohedral multilayer graphene nanoribbon transistors ...": {
+    "kind": "文献",
+    "venue": "Carbon",
+    "year": "2026",
+    "title": "Switching spin-polarized currents in rhombohedral multilayer graphene nanoribbon transistors through symmetry breaking",
+    "link": "https://doi.org/10.1016/j.carbon.2026.121907"
   }
 };
 
