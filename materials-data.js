@@ -4943,9 +4943,9 @@ window.CARBON_MATERIALS = [
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-10-19 02:39 Asia/Shanghai",
+  "updatedAt": "2026-10-20 05:06 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料本轮无新增；已发表 2e ORR 碳文献新增 1 条，目标大于 30 条/日"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -9353,6 +9353,20 @@ window.CARBON_2E_ORR_LITERATURE = [
     "relevance": "已发表含氧碳材料用于二电子 ORR/H2O2，可作为氧官能团路线的机制参照。",
     "doi": "10.1016/j.flatc.2026.101136",
     "link": "https://doi.org/10.1016/j.flatc.2026.101136",
+    "sourceKind": "文献"
+  },
+  {
+    "status": "已发表 2e ORR",
+    "year": 2026,
+    "venue": "ACS Applied Materials &amp; Interfaces",
+    "title": "Tailoring Pyridinic Nitrogen Functionalities in Nitrogen and Fluorine Co-Modified Porous Carbon for Selective Two-Electron Oxygen Reduction and Suppressed Hydrogen Peroxide Decomposition",
+    "material": "Tailoring Pyridinic Nitrogen Functionalities",
+    "materialType": "N 掺杂碳",
+    "catalystClass": "氮位点调控碳",
+    "reaction": "2e ORR to H2O2",
+    "relevance": "已发表 N 掺杂碳用于二电子 ORR/H2O2，可作为氮位点和碳缺陷耦合路线的已做参照。",
+    "doi": "10.1021/acsami.6c15734",
+    "link": "https://doi.org/10.1021/acsami.6c15734",
     "sourceKind": "文献"
   }
 ];
