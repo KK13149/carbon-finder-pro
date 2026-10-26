@@ -4938,14 +4938,54 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 248,
+    "name": "Unlocking Three‐Dimensional Electron and Ion Transport in High‐Loading and Dense Lithium‐Ion ...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "Advanced Energy Materials / 文献来源",
+    "source": "https://doi.org/10.1002/aenm.71677",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 249,
+    "name": "Polyacrylonitrile-Derived Porous Carbon with Embedded Carbon Nanotubes for All-Carbon Asymmet...",
+    "route": "纯碳孔/边缘/缺陷工程",
+    "category": "纯碳/轻微含氧",
+    "sourceWeight": "ACS Applied Energy Materials / 文献来源",
+    "source": "https://doi.org/10.1021/acsaem.6c02459",
+    "novelty": 4,
+    "evidence": 4,
+    "transfer": 4,
+    "access": 3,
+    "blank": 4,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 纯碳孔/边缘/缺陷工程，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "孔口、边缘和缺陷可改变 O2 富集、局部水环境和 *OOH 脱附，是二电子 ORR 值得优先迁移的结构变量。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-10-26 03:04 Asia/Shanghai",
+  "updatedAt": "2026-10-27 05:02 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料新增 2 条，目标大于 10 条/日；已发表文献本轮无新增"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6677,6 +6717,20 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2026",
     "title": "Switching spin-polarized currents in rhombohedral multilayer graphene nanoribbon transistors through symmetry breaking",
     "link": "https://doi.org/10.1016/j.carbon.2026.121907"
+  },
+  "Unlocking Three‐Dimensional Electron and Ion Transport in High‐Loading and Dense Lithium‐Ion ...": {
+    "kind": "文献",
+    "venue": "Advanced Energy Materials",
+    "year": "2026",
+    "title": "Unlocking Three‐Dimensional Electron and Ion Transport in High‐Loading and Dense Lithium‐Ion Battery Electrodes Assisted via Porous Graphene Networks",
+    "link": "https://doi.org/10.1002/aenm.71677"
+  },
+  "Polyacrylonitrile-Derived Porous Carbon with Embedded Carbon Nanotubes for All-Carbon Asymmet...": {
+    "kind": "文献",
+    "venue": "ACS Applied Energy Materials",
+    "year": "2026",
+    "title": "Polyacrylonitrile-Derived Porous Carbon with Embedded Carbon Nanotubes for All-Carbon Asymmetrical Supercapacitors",
+    "link": "https://doi.org/10.1021/acsaem.6c02459"
   }
 };
 
