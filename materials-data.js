@@ -4978,14 +4978,54 @@ window.CARBON_MATERIALS = [
     "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
     "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
     "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P2",
+    "rank": 250,
+    "name": "Boron oxide-assisted B/O functionalization of carbon black for selective two-electron oxygen ...",
+    "route": "掺杂碳/单原子调控",
+    "category": "掺杂碳",
+    "sourceWeight": "FlatChem / 文献来源",
+    "source": "https://doi.org/10.1016/j.flatc.2026.101136",
+    "novelty": 3,
+    "evidence": 4,
+    "transfer": 5,
+    "access": 3,
+    "blank": 3,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 掺杂碳/单原子调控，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "杂原子或单原子位点可调节邻近碳电荷和 *OOH 结合能，但需重点排查 4e ORR 与 H2O2 分解副作用。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
+  },
+  {
+    "priority": "P1",
+    "rank": 251,
+    "name": "Hydrogen-Bonded Organic Framework-Confined Carbon Dots toward Efficient Red Room-Temperature ...",
+    "route": "HOF 衍生碳/氢键有机框架前驱体",
+    "category": "HOF 衍生碳",
+    "sourceWeight": "Nano Letters / 高评价期刊",
+    "source": "https://doi.org/10.1021/acs.nanolett.6c04640",
+    "novelty": 5,
+    "evidence": 3,
+    "transfer": 3,
+    "access": 2,
+    "blank": 5,
+    "innovation": "云端自动检索到的高权重来源候选。题名指向 HOF 衍生碳/氢键有机框架前驱体，建议优先核查结构表征与合成可重复性。",
+    "hypothesis": "HOF 的可逆氢键和晶态孔道可能提供低金属、轻元素分布可调的碳前驱体，是 COF/MOF 之外的前沿空白方向。",
+    "experiment": "先按原文路线确认样品可得性；若样品难获取，寻找同结构低门槛替代模型并进行 RRDE 快速筛选。",
+    "tests": "XPS/Raman/TEM/BET 或原文关键结构证据；RRDE；H2O2 化学定量；H2O2 分解/歧化测试。",
+    "risk": "该条目由自动检索加入，进入正式实验前需要人工复核全文、样品纯度和二电子 ORR 相关性。",
+    "action": "自动新增，人工复核"
   }
 ];
 
 window.CARBON_FEED_META = {
   "cadence": "每天一次",
-  "updatedAt": "2026-11-02 04:31 Asia/Shanghai",
+  "updatedAt": "2026-11-03 07:36 Asia/Shanghai",
   "sourcePolicy": "三大顶刊、三大顶刊子刊、Nature Index 来源、高评价材料/催化期刊、先进实验室新闻、科学报道和前沿碳材料公司产品",
-  "lastRunSummary": "候选材料本轮无新增；已发表文献本轮无新增"
+  "lastRunSummary": "候选材料新增 2 条，目标大于 10 条/日；已发表文献本轮无新增"
 };
 
 window.CARBON_SOURCE_DETAILS = {
@@ -6731,6 +6771,20 @@ window.CARBON_SOURCE_DETAILS = {
     "year": "2026",
     "title": "Polyacrylonitrile-Derived Porous Carbon with Embedded Carbon Nanotubes for All-Carbon Asymmetrical Supercapacitors",
     "link": "https://doi.org/10.1021/acsaem.6c02459"
+  },
+  "Boron oxide-assisted B/O functionalization of carbon black for selective two-electron oxygen ...": {
+    "kind": "文献",
+    "venue": "FlatChem",
+    "year": "2026",
+    "title": "Boron oxide-assisted B/O functionalization of carbon black for selective two-electron oxygen reduction to hydrogen peroxide",
+    "link": "https://doi.org/10.1016/j.flatc.2026.101136"
+  },
+  "Hydrogen-Bonded Organic Framework-Confined Carbon Dots toward Efficient Red Room-Temperature ...": {
+    "kind": "文献",
+    "venue": "Nano Letters",
+    "year": "2026",
+    "title": "Hydrogen-Bonded Organic Framework-Confined Carbon Dots toward Efficient Red Room-Temperature Phosphorescence via Resonance Energy Transfer",
+    "link": "https://doi.org/10.1021/acs.nanolett.6c04640"
   }
 };
 
